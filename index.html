@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8" >
+        <meta name = "viewport" content = "width = device-width, initial-scale=1.0">
+        <title> Simple Math Games For Kids - Addition, Substraction, Multiplication & Division</title>  
+        <link rel="stylesheet" href="struct.css">    
+
+    </head>
+    <body>
+        <h1>The Math Quiz</h1> 
+
+        <div class = "content">
+
+            <!--main menu-->
+            <div id="menu">
+                <button onclick="showSections('play')">Play</button>
+                <button onclick="showSections('rule')">Rules</button>
+                <button onclick="showHighScore()">High score</button>
+            </div>
+
+           
+
+            <!-- Play menu-->
+            <div id="play" class="section" style="display:none;">
+                <h2> Let's play</h2>
+                <p> Choose math operations to practice:</p>
+                <button onclick="gameStart('add')">Addition</button><br>
+                <button onclick="gameStart('sub')">Subtraction</button><br> 
+                <button onclick="gameStart('addnsub')">Addition & Subtraction</button><br>
+                <button onclick="gameStart('mul')">Multiplication</button><br>
+                <button onclick="gameStart('div')">Division</button><br> 
+                <button onclick="gameStart('mulndiv')"> Multiplication & Division</button><br>
+                <button onclick="gameStart('all')">All 4 math operations</button><br>
+                <button onclick="backToMainMenu()">Back To Main Menu</button>
+            </div>
+
+            <!--rule section-->
+            <div id="rule" class="section" style="display:none;">
+                <h2> Game rules</h2> 
+                <p> 1. Choose which math operations to include in the quiz.<br>
+                    2. You will get one question at a time, type your answer in the box.<br>
+                    3. Each correct answer gives you 1 point.<br>
+                    4. Wrong answers give no points.<br>
+                    5. Try to get the highest score you can!</p>
+                <button onclick="backToMainMenu()">Back To Main Menu</button>
+            </div>
+
+            <!-- Highscore section -->
+            <div id="hscore" class="section" style="display:none;">
+                <h2>highscore</h2>
+                <ul id="highscoreList">  </ul>
+                <button onclick="backToMainMenu()">Back To Main Menu</button>
+            </div>
+
+            <!-- Game section-->
+            <div id="game" class="section" style="display:none;">
+                <h2 id="gameTitle"></h2>
+                <div id="problem"></div>
+                <input type="number" id="answer" placeholder="Your answer">
+                <button onclick="checkAnswer()">Submit</button>
+                <p>Score: <span id="score">0</span></p>
+                <p>Time Remaining: <span id="timer"></span> seconds</p>
+                <button onclick="backToPlayMenu()"> Back To Play Menu</button>
+            </div>
+
+            <!-- Game over Section-->
+            <div id="gameOver" class="section" style="display:none;">
+                <h2> Game Over!</h2>   
+                <p>Your Score: <span id="finalScore">0</span></p>   
+                <input type="text" id="playerName" placeholder="Enter your name">
+                <button onclick="savePlayerScore()">Save Score</button>
+                <button onclick="backToPlayMenu()">Play Again</button>
+                <button onclick="showHighScore()">High Score</button>
+                <button onclick="backToPlayMenu()">Back To Play Menu</button>
+            </div>
+     
+        </div>
+      
+        <script src="script.js"></script>
+    </body>
+</html>
